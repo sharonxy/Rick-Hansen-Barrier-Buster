@@ -47,3 +47,4 @@ class CommentForm(ModelForm):
 		widgets = {
         	'comment': widgets.Textarea(attrs={'placeholder': 'Add your comment here'}),
         }
+

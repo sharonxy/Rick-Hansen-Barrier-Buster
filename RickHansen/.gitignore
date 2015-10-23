@@ -1,0 +1,6 @@
+# python's compiled files #
+*.pyc
+
+# useless folder formatting files #
+.DS_Store
+

@@ -23,4 +23,3 @@ class Comment(models.Model):
 	pin = models.ForeignKey(Pin)
 	comment = models.CharField(max_length=500, blank=False)
 	date = models.DateField(blank=False)
-

@@ -167,12 +167,39 @@ function init() {
     // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
 
+    plotAllPins(map)
+}
+
+function plotAllPins(map) {
+    // Shows markers to the map.
+
+    // Marker sizes are expressed as a Size of X,Y where the origin of the image
+    // (0,0) is located in the top left of the image.
+
+    // Origins, anchor positions and coordinates of the marker increase in the X
+    // direction to the right and in the Y direction down.
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
+
     var image = 'img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(40.6700, -73.9400);
-    var beachMarker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: image
-    });
+    var beachMarker = 
+
+    // Shapes define the clickable region of the icon. The type defines an HTML
+    // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+    // The final coordinate closes the poly by connecting to the first coordinate.
+    var shape = {
+        coords: [1, 1, 1, 20, 18, 20, 18, 1],
+        type: 'poly'
+    };
+
+    for (var i = 0; i < beaches.length; i++) {
+        var beach = beaches[i];
+        var marker = new google.maps.Marker({
+            position: {lat: beach[1], lng: beach[2]},
+            map: map,
+            icon: image,
+            shape: shape,
+            title: beach[0],
+            zIndex: beach[3]
+        });
+    }
 }

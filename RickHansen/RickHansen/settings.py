@@ -71,8 +71,11 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'RickHansen.wsgi.application'
+FIXTURE_DIRS = (
+   '/path/to/myapp/fixtures/',
+)
 
+WSGI_APPLICATION = 'RickHansen.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases

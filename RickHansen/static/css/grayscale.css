@@ -479,3 +479,7 @@ body {
     margin-right: 0px;
     width: inherit;
 }
+
+.id_description {
+    width: 80%;
+}

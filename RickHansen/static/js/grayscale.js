@@ -44,9 +44,9 @@ function init() {
         center: new google.maps.LatLng(49.2827, -123.1207), // Vancouver. Default is New York @ 40.6700, -73.9400
 
         // Disables the default Google Maps UI components
-        disableDefaultUI: true,
-        scrollwheel: false,
-        draggable: false,
+        disableDefaultUI: false,
+        scrollwheel: true,
+        draggable: true,
 
         // How you would like to style the map. 
         // This is where you would paste any style found on Snazzy Maps.
@@ -172,16 +172,8 @@ function init() {
 };
 
 
-// A list of the markers to be drawn on the map
-// [Name, Longitude, Latitude, Z-depth(determines which pin is on top if they overlap)] 
-// fetch from database later?
-var pins = [
-    ['Pin 4', 49.280700, -123.111700, 4],
-    ['Pin 3', 49.282700, -123.120700, 3],
-    ['Pin 2', 49.280000, -123.115000, 2],
-    ['Pin 1', 49.281000, -123.120000, 1]
-];
-
+// Thanks Alex
+var pins = JSON.parse(allPins.value);
 
 
 // places the markers according to coords (var pins)
@@ -189,7 +181,6 @@ function setMarkers(map) {
 
     var image = {
         url: '/static/img/map-marker.png',
-        // how do sizes work?
         // size: new google.maps.Size(20, 32),
         // origin: new google.maps.Point(0, 0),
         // anchor: new google.maps.Point(0, 32)
@@ -205,12 +196,15 @@ function setMarkers(map) {
     for (var i=0; i<pins.length; i++) {
         var pin = pins[i];
         var marker = new google.maps.Marker({
-            position: {lat: pin[1], lng: pin[2]},
+            position: {
+                lat: pin.fields.location_latitude, 
+                lng: pin.fields.location_longitude
+            },
             map: map,
             icon: image,
             // shape: shape,
-            title: pin[0],
-            zIndex: pin[3] // determines which pin is on top if they overlap
+            // title: pin[0],
+            zIndex: i // determines which pin is on top if they overlap
         });
     }
 };

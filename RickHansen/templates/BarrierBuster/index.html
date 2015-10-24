@@ -98,24 +98,27 @@
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="tags-section-outer content-section text-center">
+    <!-- Map Section -->
+    <section id="tags" class="tags-section-outer content-section text-center">
         <div class="tags-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <p class ="barrierBusterTagsHeader">BARRIER BUSTER</p>
                     <p class ="tagsHeader">THE TAGS</p>
+                    <p>Add and view Pins</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Map Section -->
-
-
     <section id="mapContainer">
+        <!-- Buttons -->
         <span id="addButton" class="btn-lg glyphicon glyphicon-plus"></span>
         <span id="searchButton" class="btn-lg glyphicon glyphicon-search"></span>
+
+        <!-- Map -->
+        <div id="map"></div>
+
         <!-- Add Pin Menu -->
         <div id="addMenu" class="container" style='display: none'>
             <div class="col-lg-8 col-lg-offset-2">
@@ -133,6 +136,7 @@
                 {% endif %}
             </div>
         </div>
+
         <!-- Search Pins Menu -->
         <div id="searchMenu" class="container" style='display: none'>
             <div class="col-lg-8 col-lg-offset-2">
@@ -145,10 +149,8 @@
                 </ul>
             </div>
         </div>
-
-        <!-- Map -->
-        <div id="map"></div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
         <div class="row">

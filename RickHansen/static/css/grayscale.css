@@ -272,10 +272,6 @@ a:focus {
     background-color: white;
 }
 
-.col-lg-8 {
-    /*color: black;*/
-}
-
 .download-section {
     width: 100%;
     padding: 50px 0;
@@ -305,7 +301,7 @@ a:focus {
 
     #map {
         height: 400px;
-        margin-top: 250px;
+        margin-top: 0px;
     }
 }
 

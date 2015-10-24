@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head class = "pinHead">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,7 +34,7 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" class = "pinBody" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -80,7 +80,7 @@
     <!-- Form Section -->   
     <span id="addButton" class="glyphicon glyphicon-plus" onclick ="onAddButtonClicked()"> Add New Barrier</span>
     <div id="form">
-        <form   id="pinform" role="form" method="post" action="" enctype="multipart/form-data">
+        <form   id="pinform" class="formArea" role="form" method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
               <div class="form1" style="padding-left: 120px">
                 <label for="tag" class="control-label" style="padding-right: 52px">{{ form1.tag.label_tag }}
@@ -119,8 +119,8 @@
         </form>
     </div>
     <!-- Footer -->
-    <footer>
-        <div class="container text-center">
+    <footer class = "footerTest">
+        <div class="container text-center formFooter">
             <p>Copyright &copy; Your Website 2014</p>
         </div>
     </footer>

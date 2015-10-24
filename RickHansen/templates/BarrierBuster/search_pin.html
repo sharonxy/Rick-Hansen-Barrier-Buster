@@ -75,50 +75,53 @@
     <!-- Map Section -->
     <div id="map"></div>
     <!-- Form Section -->   
-    <span id="addButton" class="glyphicon glyphicon-plus" onclick ="onAddButtonClicked()"> Add New Barrier</span>
+    <div class="text-center">
+    <h3>Search Pins</h3>
+    <p><a href="{% url 'BarrierBuster:searchPin' %}">Search Barriers and Best Practices by Type and Location</a></p>
+    </div>
     <div id="form">
-        <form   id="pinform" role="form" method="post" action="" enctype="multipart/form-data">
+        <form   id="searchform" role="form" method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
-              <div class="form1" style="padding-left: 120px">
-                <label for="tag" class="control-label" style="padding-right: 52px">{{ form1.tag.label_tag }}
+              <div class="form" style="padding-left: 120px">
+                <label for="tag" class="control-label" style="padding-right: 52px">{{ searchForm.tag.label_tag }}
                     <span style="font-size: 20px;color: red">*</span></label>
-                <br> {{ form1.tag }}
-                <strong>{{ form1.tag.errors }} </strong>
+                <br> {{ searchForm.tag }}
+                <strong>{{ searchForm.tag.errors }} </strong>
                 </div>
-                <div class="form1" style="padding-left: 120px">
-                <label for="status" class="control-label" style="padding-right: 52px">{{ form1.status.label_tag }}
+                <div class="form" style="padding-left: 120px">
+                <label for="status" class="control-label" style="padding-right: 52px">{{ searchForm.status.label_tag }}
                     <span style="font-size: 20px;color: red">*</span></label>
-                <br> {{ form1.status }}
-                <strong>{{ form1.status.errors }} </strong>
+                <br> {{ searchForm.status }}
+                <strong>{{ searchForm.status.errors }} </strong>
                 </div>
-                <div class="form1" style="padding-left: 120px">
-                <label for="description" style="padding-right: 52px">{{ form1.description.label_tag }}</label>
-                <br> {{ form1.description }}
-                <strong>{{ form1.description.errors }} </strong>
-                </div>
-                <p> Please mark the location on the map: (latitude and longitude fields will be automatically filled)</P>
-                <div class="form1" style="padding-left: 120px">
-                <label for="address" class="control-label" style="padding-right: 52px">{{ form1.address.label_tag }}</label>
-                <br> {{ form1.address }}
-                <strong>{{ form1.address.errors }} </strong>
-                </div>
-                <div class="form1" style="padding-left: 120px">
-                <label for="location_latitude" class="control-label" style="padding-right: 52px">{{ form1.location_latitude.label_tag }}</label>
-                <br> {{ form1.location_latitude }}
-                <strong>{{ form1.location_latitude.errors }} </strong>
-                </div>
-                <div class="form1" style="padding-left: 120px">
-                <label for="location_longitude" class="control-label" style="padding-right: 52px">{{ form1.location_longitude.label_tag }}</label>
-                <br> {{ form1.location_longitude }}
-                <strong>{{ form1.location_longitude.errors }} </strong>
-                </div>
-                <div class="form1" style="padding-left: 120px">
-                <label for="location_longitude" >{{ form1.img.label_tag }}</label>
-                <br> {{ form1.img }}
-                <strong>{{ form1.img.errors }} </strong>
-                </div>
-                <p><input type="submit" class="btn btn-danger btnpo2" style="margin-left: 120px" name="submit" value="Create"/></p>
+               
+                <p><input type="submit" class="btn btn-danger btnpo2" style="margin-left: 120px" name="submit" value="Search"/></p>
         </form>
+    </div>
+
+    <div id="pinlist">
+        {% if pin_list %}
+        <h2 class="bg-info"> Pin List!</h2>
+        <table class="table"  >
+            <thead>
+            <tr>
+                    <th>Tag</th>
+                    <th>Status</th>
+                    <th>Address</th>
+                    <th>Longitude</th>
+                    <th>Latitude</th>
+            </thead>
+            {% for pin in pin_list %}
+                <tr class="active">
+                    <td>{{pin.status}}</td>
+                    <td>{{pin.address}}</td>
+                    <td>{{pin.location_latitude}}</td>
+                    <td>{{pin.location_longitude}}</td>
+                </tr>  
+           {% endfor %}        
+        </table>
+        
+        {% endif %}
     </div>
     <!-- Footer -->
     <footer>

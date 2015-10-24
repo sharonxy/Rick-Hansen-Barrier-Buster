@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from BarrierBuster.models import *
+from BarrierBuster.form import *
 from datetime import datetime
 from django.contrib import messages
 
@@ -22,4 +23,17 @@ def createPin(request):
 		pinform = PinForm()
 	return render(request, 'BarrierBuster/create_pin.html', {'form1': pinform})
 
+def searchPin(request):
+	tag = 'All'
+	status = 'All'
+	if request.method == 'POST':
+		tag = request.POST['tag']
+		status = request.POST['status']
+		pin_list = Pin.objects.filter(tag='tag', status='status')
+#		pin_list = Pin.objects.all()
+		searchForm = SearchForm(initial={'tag': tag, 'status': status})
+		return render(request, 'BarrierBuster/search_pin.html', {'pin_list': pin_list, 'searchForm': searchForm})
+
+	searchForm = SearchForm(initial={'tag': tag, 'status': status})
+	return render(request, 'BarrierBuster/search_pin.html', {'searchForm': searchForm})
 

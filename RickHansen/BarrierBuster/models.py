@@ -12,6 +12,7 @@ class Pin(models.Model):
 	description = models.TextField(max_length=500, null=True, blank=True)
 	date_created = models.DateTimeField(blank=True, null=True)
 	date_updated = models.DateTimeField(blank=True, null=True)
+	address = models.TextField(max_length=500, null=True, blank=True)
 	location_latitude = models.FloatField(blank=False)
 	location_longitude = models.FloatField(blank=False)
 	img = models.ImageField(upload_to='static/images/', blank=True, null=True)	

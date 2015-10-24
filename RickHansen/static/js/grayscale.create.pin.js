@@ -166,7 +166,14 @@ function init() {
 
     // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
-    
+
+    // display "DRAG ME" sign automatically on load
+    var contentString = '<div id="content" style="color: black"><div><b>Drag me!</b></div></div>'
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 100
+    });
+
     var marker = new google.maps.Marker({
         draggable: true,
         position: {
@@ -174,6 +181,7 @@ function init() {
             lng: -123.1207
         }, 
         map: map,
+        infowindow: infowindow,
         title: "Your location"
     });
 
@@ -181,8 +189,10 @@ function init() {
     google.maps.event.addListener(marker, 'dragend', function (event) {
         document.getElementById("id_location_latitude").value = this.getPosition().lat();
         document.getElementById("id_location_longitude").value = this.getPosition().lng();
-        console.log(document.getElementById("id_location_latitude").value);
-        console.log(document.getElementById("id_location_longitude").value);
+        marker.infowindow.close();
     });
 
+    // setup marker with infowindow
+    infowindow.open(map, marker);
+    
 };

@@ -22,6 +22,7 @@ def createPin(request):
 			return redirect(reverse('BarrierBuster:index'))
 		return render(request, 'BarrierBuster/create_pin.html', {'form1': pinform})
 	else:
+		pinform = PinForm()
 		data = serializers.serialize('json', Pin.objects.all())
-	return render_to_response('BarrierBuster/index.html', {'allPins': data})
+	return render_to_response('BarrierBuster/create_pin.html', {'form1': pinform, 'allPins': data})
 

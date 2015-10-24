@@ -22,5 +22,45 @@
       "pin": 3,
       "image": "images/saber3.png"
     }
+  },
+  {
+    "model": "BarrierBuster.image",
+    "pk": 4,
+    "fields": {
+      "pin": 4,
+      "image": "images/saber2.png"
+    }
+  },
+  {
+    "model": "BarrierBuster.image",
+    "pk": 5,
+    "fields": {
+      "pin": 4,
+      "image": "images/saber3.png"
+    }
+  },
+  {
+    "model": "BarrierBuster.image",
+    "pk": 6,
+    "fields": {
+      "pin": 5,
+      "image": "images/saber3.png"
+    }
+  },
+  {
+    "model": "BarrierBuster.image",
+    "pk": 7,
+    "fields": {
+      "pin": 6,
+      "image": "images/saber3.png"
+    }
+  },
+  {
+    "model": "BarrierBuster.image",
+    "pk": 8,
+    "fields": {
+      "pin": 7,
+      "image": "images/saber1.png"
+    }
   }
 ]

@@ -21,7 +21,7 @@
       "description": "I don't know how to get around this pitfall.",
       "date_created": "2015-03-17T08:10:23+00:00",
       "date_updated": "2015-03-17T08:10:23+00:00",
-      "location_latitude": 49.278833, 
+      "location_latitude": 49.278833,
       "location_longitude": -123.120728
     }
   },
@@ -34,8 +34,60 @@
       "description": "I love the new Metrotown elevator!",
       "date_created": "2018-09-02T22:53:19+00:00",
       "date_updated": "2018-09-02T22:53:19+00:00",
-      "location_latitude": 49.225790, 
+      "location_latitude": 49.225790,
       "location_longitude": -123.003507
+    }
+  },
+  {
+    "model": "BarrierBuster.pin",
+    "pk": 4,
+    "fields": {
+      "tag": "Curb Cut",
+      "status": "In Progress",
+      "description": "We are working on a fix for this problem area.",
+      "date_created": "2015-04-15T05:28:12+00:00",
+      "date_updated": "2015-04-16T11:13:14+00:00",
+      "location_latitude": 49.287690,
+      "location_longitude": -123.114181
+    }
+  },
+  {
+    "model": "BarrierBuster.pin",
+    "pk": 5,
+    "fields": {
+      "tag": "Sidewalk",
+      "status": "Resolved",
+      "description": "Now it's easier to access the UBC Food Court",
+      "date_created": "2015-03-09T07:43:59+00:00",
+      "date_updated": "2015-03-31T18:01:22+00:00",
+      "location_latitude": 49.266621,
+      "location_longitude": -123.243464
+    }
+  },
+  {
+    "model": "BarrierBuster.pin",
+    "pk": 6,
+    "fields": {
+      "tag": "Others",
+      "status": "Barrier",
+      "description": "Oh no! The hospital's elevator isn't working right now.",
+      "date_created": "2015-03-19T09:02:17+00:00",
+      "date_updated": "2015-03-19T09:02:17+00:00",
+      "location_latitude": 49.261474,
+      "location_longitude": -123.124481
+    }
+  },
+  {
+    "model": "BarrierBuster.pin",
+    "pk": 7,
+    "fields": {
+      "tag": "Music",
+      "status": "Resolved",
+      "description": "Now it's easier to access the UBC Food Court",
+      "date_created": "2015-03-01T23:09:39+00:00",
+      "date_updated": "2015-03-06T19:18:20+00:00",
+      "location_latitude": 49.279947,
+      "location_longitude": -123.120807
     }
   }
 ]

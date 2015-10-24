@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'BarrierBuster'
+    'BarrierBuster',
+    'fixture_media'
 )
 
 MIDDLEWARE_CLASSES = (

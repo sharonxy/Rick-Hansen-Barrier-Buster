@@ -5,13 +5,13 @@ $(function(){
 	var $addButton = $("#addButton");
 	var $searchButton = $("#searchButton");
 
-	// event listener for 'add' button
-	$addButton.on('click', function() {
-		$addButton.toggleClass("glyphicon glyphicon-plus");
-		$addButton.toggleClass("glyphicon glyphicon-minus");
-		$searchMenu.slideUp();
-		$addMenu.slideToggle();
-	});
+	// // event listener for 'add' button
+	// $addButton.on('click', function() {
+	// 	$addButton.toggleClass("glyphicon glyphicon-plus");
+	// 	$addButton.toggleClass("glyphicon glyphicon-minus");
+	// 	$searchMenu.slideUp();
+	// 	$addMenu.slideToggle();
+	// });
 
 	// event listener for 'search' button
 	$searchButton.on('click', function() {

@@ -147,7 +147,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url(../img/rh_bgimage_hike.png) no-repeat top center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -166,12 +166,14 @@ a:focus {
     src: url('../fonts/colors_of_autumn.ttf');
 }
 .intro .intro-body .brand-heading {
-    font-size: 18px !important;
+    font-size: 30px !important;
     font-family: 'Arial';
+    font-style: normal !important;
+    text-align: bottom;
 }
 
 .intro .intro-body .intro-text {
-    font-size: 40px;
+    font-size: 50px !important;
     font-family: 'Colors of Autumn';
 }
 

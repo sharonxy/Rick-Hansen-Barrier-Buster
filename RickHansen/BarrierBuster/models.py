@@ -4,7 +4,12 @@ from datetime import datetime
 
 # Create your models here.
 class Pin(models.Model):
-	Tag_Choice = (('Curb Cut', 'Curb Cut'), ('Sidewalk','Sidewalk'), ('Accessible Path','Accessible Path'))
+	Tag_Choice = Tag_Choice = (('Curb Cut', 'Curb Cut'), ('Sidewalk','Sidewalk'), ('Accessible Path','Accessible Path'),
+		('Transit', 'Transit'), ('Public Elevator', 'Public Elevator'), ('Accessible Washroom', 'Accessible Washroom'),
+		('Customer Service', 'Customer Service'), ('Accessible Entrance', 'Accessible Entrance'), ('Automatic Door', 'Automatic Door'),
+		('Traffic Light Timing', 'Traffic Light Timing'), ('Traffic Light Low Sound', 'Traffic Light Low Sound'),
+		('Accessible Parking', 'Accessible Parking'), ('Establishment Policy', 'Establishment Policy'), ('Other', 'Other'))
+	Status_Choice = (('Barrier','Barrier'),('In Progress','In Progress'),('Resolved', 'Resolved'),('Best Practice','Best Practice'))
 	Status_Choice = (('Barrier','Barrier'),('In Progress','In Progress'),('Resolved', 'Resolved'),('Best Practice','Best Practice'))
 	#General information about Pin
 	tag = models.CharField(max_length=50, choices=Tag_Choice, blank=False, default='Accessible Path')

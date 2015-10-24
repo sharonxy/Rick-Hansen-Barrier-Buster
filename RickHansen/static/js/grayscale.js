@@ -41,7 +41,7 @@ function init() {
         zoom: 15,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(40.6700, -73.9400), // New York
+        center: new google.maps.LatLng(49.2827, -123.1207), // Vancouver. Default is New York @ 40.6700, -73.9400
 
         // Disables the default Google Maps UI components
         disableDefaultUI: true,
@@ -167,12 +167,61 @@ function init() {
     // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
 
-    // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
-    var image = '/static/img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(40.6700, -73.9400);
-    var beachMarker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: image
-    });
-}
+    // drop the pins down (markers)
+    setMarkers(map);
+};
+
+
+// A list of the markers to be drawn on the map
+// [Name, Longitude, Latitude, Z-depth(determines which pin is on top if they overlap)] 
+// fetch from database later?
+var pins = [
+    ['Pin 4', 49.280700, -123.111700, 4],
+    ['Pin 3', 49.282700, -123.120700, 3],
+    ['Pin 2', 49.280000, -123.115000, 2],
+    ['Pin 1', 49.281000, -123.120000, 1]
+];
+
+
+
+// places the markers according to coords (var pins)
+function setMarkers(map) {
+
+    var image = {
+        url: '/static/img/map-marker.png',
+        // how do sizes work?
+        // size: new google.maps.Size(20, 32),
+        // origin: new google.maps.Point(0, 0),
+        // anchor: new google.maps.Point(0, 32)
+    };
+
+    // defines the clickable region of the icon
+    // no real use yet
+    // var shape = {
+    //     coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    //     type: 'poly'
+    // };
+
+    for (var i=0; i<pins.length; i++) {
+        var pin = pins[i];
+        var marker = new google.maps.Marker({
+            position: {lat: pin[1], lng: pin[2]},
+            map: map,
+            icon: image,
+            // shape: shape,
+            title: pin[0],
+            zIndex: pin[3] // determines which pin is on top if they overlap
+        });
+    }
+};
+
+
+
+
+
+
+
+
+
+
+

@@ -6,6 +6,7 @@ from BarrierBuster.form import *
 from datetime import datetime
 from django.contrib import messages
 from django.core import serializers
+from django.views.decorators.csrf import csrf_protect
 
 def index(request):
 	data = serializers.serialize('json', Pin.objects.all())
@@ -23,19 +24,33 @@ def createPin(request):
 			return redirect(reverse('BarrierBuster:index'))
 	else:
 		pinform = PinForm()
-	return render(request,'BarrierBuster/create_pin.html', {'form1': pinform})
+	return render(request, 'BarrierBuster/create_pin.html', {'form1': pinform})
 
 
 def searchPin(request):
-	tag = 'All'
-	status = 'All'
+	tag1 = 'All'
+	status1 = 'All'
 	if request.method == 'POST':
-		tag = request.POST['tag']
-		status = request.POST['status']
-		pin_list = Pin.objects.filter(tag='tag', status='status')
-#		pin_list = Pin.objects.all()
-		searchForm = SearchForm(initial={'tag': tag, 'status': status})
+		tag1 = request.POST['tag']
+		status1 = request.POST['status']
+
+#		if tag1 =='All' and status1 =='All':
+#		
+#			if status1=='All' and tag1 != 'All':
+		if tag1!='All' and status1 !='All':
+			pin_list = Pin.objects.filter(tag=tag1, status=status1)
+		elif tag1 !='All' and status1 == 'All':
+			pin_list = Pin.objects.filter(tag=tag1)
+		elif status1 != 'All' and tag1 == 'All':
+			pin_list = Pin.objects.filter(status=status1)		
+		else:
+			pin_list = Pin.objects.all()
+#			elif tag1=='All' and status1 != 'All':
+#				pin_list = Pin.objects.filter(status=status1)
+#			else: 
+#				pin_list = Pin.objects.filter(tag=tag1, status=status1)					
+		searchForm = SearchForm(initial={'tag': tag1, 'status': status1})
 		return render(request, 'BarrierBuster/search_pin.html', {'pin_list': pin_list, 'searchForm': searchForm})
 
-	searchForm = SearchForm(initial={'tag': tag, 'status': status})
+	searchForm = SearchForm(initial={'tag': tag1, 'status': status1})
 	return render(request, 'BarrierBuster/search_pin.html', {'searchForm': searchForm})

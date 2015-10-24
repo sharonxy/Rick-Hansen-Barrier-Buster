@@ -112,7 +112,8 @@
                     <th>Latitude</th>
             </thead>
             {% for pin in pin_list %}
-                <tr class="active">
+                <tr class="active" style="color: black">
+                    <td>{{pin.tag}}</td>
                     <td>{{pin.status}}</td>
                     <td>{{pin.address}}</td>
                     <td>{{pin.location_latitude}}</td>

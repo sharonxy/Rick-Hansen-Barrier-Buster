@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head class = "pinHead">
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,9 +22,6 @@
     <link href="http://fonts.googleapiFhs.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-    <!-- Pin Data -->
-    <input type="hidden" id="allPins" value="{{allPins}}" />
-    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,7 +31,7 @@
 
 </head>
 
-<body id="page-top" class = "pinBody" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -78,54 +75,57 @@
     <!-- Map Section -->
     <div id="map"></div>
     <!-- Form Section -->   
-    <span id="addButton" class="glyphicon glyphicon-plus" onclick ="onAddButtonClicked()"> Add New Barrier</span>
+    <div class="text-center">
+    <h3>Search Pins</h3>
+    <p><a href="{% url 'BarrierBuster:searchPin' %}">Search Barriers and Best Practices by Type and Location</a></p>
+    </div>
     <div id="form">
-        <form   id="pinform" class="formArea" role="form" method="post" action="" enctype="multipart/form-data">
+        <form   id="searchform" role="form" method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
-              <div class="form1" style="padding-left: 120px">
-                <label for="tag" class="control-label" style="padding-right: 52px">{{ form1.tag.label_tag }}
+              <div class="form" style="padding-left: 120px">
+                <label for="tag" class="control-label" style="padding-right: 52px">{{ searchForm.tag.label_tag }}
                     <span style="font-size: 20px;color: red">*</span></label>
-                <br> {{ form1.tag }}
-                <strong>{{ form1.tag.errors }} </strong>
+                <br> {{ searchForm.tag }}
+                <strong>{{ searchForm.tag.errors }} </strong>
                 </div>
-                <div class="form1" style="padding-left: 120px">
-                <label for="status" class="control-label" style="padding-right: 52px">{{ form1.status.label_tag }}
+                <div class="form" style="padding-left: 120px">
+                <label for="status" class="control-label" style="padding-right: 52px">{{ searchForm.status.label_tag }}
                     <span style="font-size: 20px;color: red">*</span></label>
-                <br> {{ form1.status }}
-                <strong>{{ form1.status.errors }} </strong>
+                <br> {{ searchForm.status }}
+                <strong>{{ searchForm.status.errors }} </strong>
                 </div>
-                <div class="form1" style="padding-left: 120px">
-                <label for="description" style="padding-right: 52px">{{ form1.description.label_tag }}</label>
-                <br> <div style="color: black">{{form1.description }}</div>
-                <strong>{{ form1.description.errors }} </strong>
-                </div>
-                <p> Please mark the location on the map: (latitude and longitude fields will be automatically filled)</P>
-                <div class="form1" style="padding-left: 120px">
-                <label for="address" class="control-label" style="padding-right: 52px">{{ form1.address.label_tag }}</label>
-                <br> {{ form1.address }}
-                <strong>{{ form1.address.errors }} </strong>
-                </div>
-                <div class="form1" style="padding-left: 120px">
-                <label for="location_latitude" class="control-label" style="padding-right: 52px">{{ form1.location_latitude.label_tag }}</label>
-                <br> <div style="color: black">{{ form1.location_latitude }}</div>
-                <strong>{{ form1.location_latitude.errors }} </strong>
-                </div>
-                <div class="form1" style="padding-left: 120px">
-                <label for="location_longitude" class="control-label" style="padding-right: 52px">{{ form1.location_longitude.label_tag }}</label>
-                <br> <div style="color: black">{{ form1.location_longitude }}</div>
-                <strong>{{ form1.location_longitude.errors }} </strong>
-                </div>
-                <div class="form1" style="padding-left: 120px">
-                <label for="location_longitude" >{{ form1.img.label_tag }}</label>
-                <br> {{ form1.img }}
-                <strong>{{ form1.img.errors }} </strong>
-                </div>
-                <p><input type="submit" class="btn btn-danger btnpo2" style="margin-left: 120px" name="submit" value="Create"/></p>
+               
+                <p><input type="submit" class="btn btn-danger btnpo2" style="margin-left: 120px" name="submit" value="Search"/></p>
         </form>
     </div>
+
+    <div id="pinlist">
+        {% if pin_list %}
+        <h2 class="bg-info"> Pin List!</h2>
+        <table class="table"  >
+            <thead>
+            <tr>
+                    <th>Tag</th>
+                    <th>Status</th>
+                    <th>Address</th>
+                    <th>Longitude</th>
+                    <th>Latitude</th>
+            </thead>
+            {% for pin in pin_list %}
+                <tr class="active">
+                    <td>{{pin.status}}</td>
+                    <td>{{pin.address}}</td>
+                    <td>{{pin.location_latitude}}</td>
+                    <td>{{pin.location_longitude}}</td>
+                </tr>  
+           {% endfor %}        
+        </table>
+        
+        {% endif %}
+    </div>
     <!-- Footer -->
-    <footer class = "footerTest">
-        <div class="container text-center formFooter">
+    <footer>
+        <div class="container text-center">
             <p>Copyright &copy; Your Website 2014</p>
         </div>
     </footer>
@@ -143,9 +143,7 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="/static/js/grayscale.create.pin.js"></script>
-
-    <div id="map_canvas" style="width:50%; height:50%"></div>
+    <script src="/static/js/grayscale.js"></script>
 
 </body>
 

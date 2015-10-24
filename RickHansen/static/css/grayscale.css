@@ -480,6 +480,25 @@ body {
     width: inherit;
 }
 
-.id_description {
+.pinBody {
+    background-color: #414042;
+    font-family: Arial;
+}
+
+.pinHead {
+    font-family: Arial;
+    font-weight: lighter !important;
+}
+
+.pinHead .formArea {
+    font-weight: lighter !important;
+}
+
+#id_description {
     width: 80%;
+}
+
+.formArea .form1 .control-label {
+    font-weight: normal !important;
+    font-family: Arial;
 }

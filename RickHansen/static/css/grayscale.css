@@ -160,12 +160,19 @@ a:focus {
     vertical-align: middle;
 }
 
+@font-face {
+    font-family: 'Colors of Autumn';
+
+    src: url('../fonts/colors_of_autumn.ttf');
+}
 .intro .intro-body .brand-heading {
-    font-size: 40px;
+    font-size: 18px !important;
+    font-family: 'Arial';
 }
 
 .intro .intro-body .intro-text {
-    font-size: 18px;
+    font-size: 40px;
+    font-family: 'Colors of Autumn';
 }
 
 @media(min-width:768px) {

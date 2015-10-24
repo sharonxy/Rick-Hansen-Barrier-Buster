@@ -166,9 +166,6 @@ function init() {
 
     // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
-
-    // drop the pins down (markers)
-    setMarkers(map);
     
     var marker = new google.maps.Marker({
         draggable: true,
@@ -188,42 +185,4 @@ function init() {
         console.log(document.getElementById("id_location_longitude").value);
     });
 
-};
-
-
-// Thanks Alex
-var pins = JSON.parse(allPins.value);
-
-
-// places the markers according to coords (var pins)
-function setMarkers(map) {
-
-    var image = {
-        url: '/static/img/map-marker.png',
-        // size: new google.maps.Size(20, 32),
-        // origin: new google.maps.Point(0, 0),
-        // anchor: new google.maps.Point(0, 32)
-    };
-
-    // defines the clickable region of the icon
-    // no real use yet
-    // var shape = {
-    //     coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    //     type: 'poly'
-    // };
-
-    for (var i=0; i<pins.length; i++) {
-        var pin = pins[i];
-        var marker = new google.maps.Marker({
-            position: {
-                lat: pin.fields.location_latitude, 
-                lng: pin.fields.location_longitude
-            },
-            map: map,
-            icon: image,
-            // shape: shape,
-            // title: pin[0],
-            zIndex: i // determines which pin is on top if they overlap
-        });
-    }
 };

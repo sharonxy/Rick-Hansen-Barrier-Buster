@@ -21,11 +21,10 @@ def createPin(request):
 			newpin.save()
 			messages.success(request, 'Thanks for, a new pin has been created.')
 			return redirect(reverse('BarrierBuster:index'))
-		return render(request, 'BarrierBuster/create_pin.html', {'form1': pinform})
 	else:
 		pinform = PinForm()
-		data = serializers.serialize('json', Pin.objects.all())
-	return render_to_response('BarrierBuster/create_pin.html', {'form1': pinform, 'allPins': data})
+	return render(request,'BarrierBuster/create_pin.html', {'form1': pinform})
+
 
 def searchPin(request):
 	tag = 'All'

@@ -169,13 +169,12 @@ function init() {
 
     // drop the pins down (markers)
     setMarkers(map);
-
 };
 
 
 // Thanks Alex
 var pins = JSON.parse(allPins.value);
-
+console.log(pins);
 
 // places the markers according to coords (var pins)
 function setMarkers(map) {
@@ -195,7 +194,39 @@ function setMarkers(map) {
     // };
 
     for (var i=0; i<pins.length; i++) {
+        // object (one pin)
         var pin = pins[i];
+
+        if (pin.fields.address != null)
+            var address = pin.fields.address;
+        else
+            var address = '';
+
+        if (pin.fields.date_updated != null)
+            var date = pin.fields.date_updated;
+        else
+            var date = '';
+
+        // data of a detailed window
+        var contentString = '<div id="content" style="color: black">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">' + pin.fields.tag + '</h1>'+
+            '<div id="bodyContent">'+
+            '<div><b>Status: </b>'+ pin.fields.status +'</div>'+
+            '<div><b>Description: </b>'+ pin.fields.description +'</div>'+
+            '<div><b>Address: </b>'+ address +'</div>'+
+            '<div><b>Date created: </b>'+ pin.fields.date_created.slice(0,10) + " " + pin.fields.date_created.slice(11,19) +'</div>'+
+            '<div><b>Date updated: </b>'+ date.slice(0,10) + " " + date.slice(11,19) +'</div>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 450
+        });
+
+        // creating the marker
         var marker = new google.maps.Marker({
             position: {
                 lat: pin.fields.location_latitude, 
@@ -203,9 +234,15 @@ function setMarkers(map) {
             },
             map: map,
             icon: image,
+            infowindow: infowindow,
             // shape: shape,
             // title: pin[0],
             zIndex: i // determines which pin is on top if they overlap
+        });
+
+        // listener for clicking on a pin
+        marker.addListener('click', function() {
+            this.infowindow.open(map, this);
         });
     }
 };

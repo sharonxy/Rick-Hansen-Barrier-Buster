@@ -269,6 +269,11 @@ a:focus {
 .content-section {
     padding-top: 100px;
     font-family: Arial;
+    background-color: white;
+}
+
+.col-lg-8 {
+    color: black;
 }
 
 .download-section {
@@ -380,4 +385,55 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
+}
+
+.aboutUs {
+    font-family: Arial;
+    margin-bottom: 0px;
+    color: #58595B;
+    font-size: 16px;
+    font-weight: bold !important;
+}
+
+.aboutUsDetails {
+    font-family: 'Colors of Autumn';
+    font-size: 31.6px;
+    color: #58595B;
+}
+
+.aboutUsParagraph {
+    color: #6D6E71;
+}
+
+.barrierBusterTagsHeader {
+    color: white;
+    font-family: 'Arial';
+    margin-bottom: 0px;
+}
+
+.tagsHeader {
+    color: white;
+    font-family: 'Colors of Autumn';
+    font-size:31.6px;
+}
+
+.tags-section {
+    background-color: black;
+}
+
+.tags-section-outer {
+    padding-top: 0px;
+}
+
+.tags-section-outer .container {
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+.about-us {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    margin-left:0px;
+    margin-right: 0px;
+    width: inherit;
 }

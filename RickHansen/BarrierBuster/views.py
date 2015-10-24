@@ -6,7 +6,7 @@ from datetime import datetime
 from django.contrib import messages
 
 def index(request):
-    return render(request, 'BarrierBuster/index.html')
+    return render(request, 'BarrierBuster/index.html', {'allPins': Pin.objects.all()})
 
 def createPin(request):
 # Create your views here.

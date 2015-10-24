@@ -54,13 +54,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">About Us</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#download">Download</a>
+                        <a class="page-scroll" href="#tags">Tags</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#mapContainer">Map</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact -100px">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -120,6 +123,8 @@
         <img class = "greenIcon" src="static/img/Condition_Green_Resolved_Icon.png"></img>
         <img class = "blueIcon" src="static/img/Condition_Blue_BP_Icon.png"></img>
 
+        <a href="{% url 'BarrierBuster:createPin' %}" class="page-scroll"><span id="addButton" class="btn-lg glyphicon glyphicon-plus"></span>Add a pin</a>
+        <a href="#searchMenu" class="page-scroll"><span id="searchButton" class="btn-lg glyphicon glyphicon-search"></span></a>
 
         <!-- Map -->
         <div id="map"></div>

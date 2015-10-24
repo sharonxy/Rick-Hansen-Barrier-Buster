@@ -17,7 +17,7 @@ class Pin(models.Model):
 	img = models.ImageField(upload_to='static/images/', blank=True, null=True)	
 
 class Image(models.Model):
-#	pin = models.ForeignKey(Pin)
+	pin = models.ForeignKey(Pin)
 	image = models.ImageField(upload_to='static/images/', blank=True, null=True)
 
 class Comment(models.Model):

@@ -13,7 +13,7 @@
     "pk": 2,
     "fields": {
       "pin": 1,
-      "comment": "Mayor Robertson is aware of the issue.",
+      "comment": "Mayor Robertson is aware of the issue and is onboard about a fix",
       "date": "2015-03-18T01:16:33+00:00"
     }
   },
@@ -24,6 +24,33 @@
       "pin": 3,
       "comment": "This can't be, the elevator hasn't been made yet!",
       "date": "2018-11-01T09:54:00+00:00"
+    }
+  },
+  {
+    "model": "BarrierBuster.comment",
+    "pk": 4,
+    "fields": {
+      "pin": 5,
+      "comment": "This is a problem. I really want to eat some cheap Asian food on campus.",
+      "date": "2015-03-10T18:16:14+00:00"
+    }
+  },
+  {
+    "model": "BarrierBuster.comment",
+    "pk": 5,
+    "fields": {
+      "pin": 5,
+      "comment": "UBC Facilities here. We are aware of the issue and are working on a fix.",
+      "date": "2015-03-17T17:28:17+00:00"
+    }
+  },
+  {
+    "model": "BarrierBuster.comment",
+    "pk": 6,
+    "fields": {
+      "pin": 5,
+      "comment": "The new ramp is acceptable, but a new elevator would have been better.",
+      "date": "2018-04-02T09:09:09+00:00"
     }
   }
 ]

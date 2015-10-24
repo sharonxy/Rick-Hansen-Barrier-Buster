@@ -62,7 +62,7 @@ a:focus {
 }
 
 #contact {
-    color : #42dca3;
+    color : #58595B;
 }
 
 .navbar-custom {
@@ -455,7 +455,7 @@ body {
 }
 
 .tags-section {
-    background-color: black;
+    background-color: #414042;
 }
 
 .tags-section-outer {
@@ -467,9 +467,14 @@ body {
     padding-bottom: 60px;
 }
 
+.container{
+    width: 100%;
+
+}
+
 .about-us {
-    padding-top: 40px;
-    padding-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 70px;
     margin-left:0px;
     margin-right: 0px;
     width: inherit;

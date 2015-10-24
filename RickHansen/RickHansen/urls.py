@@ -22,5 +22,5 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^BarrierBuster/', include('BarrierBuster.urls')), # ADD THIS NEW TUPLE!
+    url(r'^', include('BarrierBuster.urls', namespace='BarrierBuster')), # ADD THIS NEW TUPLE!
 )

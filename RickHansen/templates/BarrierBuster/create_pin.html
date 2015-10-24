@@ -68,86 +68,53 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Success is measured by</h1>
-                        <p class="intro-text">HOW YOU LIVE YOUR LIFE</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Barrier Buster Map</h2>
-                <p>Find out instantly about barriers of access in any building</p>
-                <p>Help out others by identifying barriers.</p>
-                <p></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="download" class="content-section text-center">
-        <div class="download-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    
 
     <script src="/static/js/barrierbuster.js"></script>
 
     <!-- Map Section -->
     <div id="map"></div>
-    <span id="addButton" class="glyphicon glyphicon-plus" onclick ="onAddButtonClicked()"> 
-        <a href="{% url 'BarrierBuster:createPin' %}">Add New Barrier</a></span>
-
-    {% if messages %}
-        <ul class= "messages">
-        {% for message in messages %}
-        <p style="color:red"><strong>{{ message }}</strong></p>
-        {% endfor %}
-        </ul>
-    {% endif %}
-
+    <!-- Form Section -->   
+    <span id="addButton" class="glyphicon glyphicon-plus" onclick ="onAddButtonClicked()"> Add New Barrier</span>
+    <div id="form">
+        <form   id="pinform" role="form" method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+              <div class="form1" style="padding-left: 120px">
+                <label for="tag" class="control-label" style="padding-right: 52px">{{ form1.tag.label_tag }}
+                    <span style="font-size: 20px;color: red">*</span></label>
+                <br> {{ form1.tag }}
+                <strong>{{ form1.tag.errors }} </strong>
+                </div>
+                <div class="form1" style="padding-left: 120px">
+                <label for="status" class="control-label" style="padding-right: 52px">{{ form1.status.label_tag }}
+                    <span style="font-size: 20px;color: red">*</span></label>
+                <br> {{ form1.status }}
+                <strong>{{ form1.status.errors }} </strong>
+                </div>
+                <div class="form1" style="padding-left: 120px">
+                <label for="description" style="padding-right: 52px">{{ form1.description.label_tag }}</label>
+                <br> {{ form1.description }}
+                <strong>{{ form1.description.errors }} </strong>
+                </div>
+                <p> Please mark the location on the map: (latitude and longitude fields will be automatically filled)</P>
+                <div class="form1" style="padding-left: 120px">
+                <label for="location_latitude" class="control-label" style="padding-right: 52px">{{ form1.location_latitude.label_tag }}</label>
+                <br> {{ form1.location_latitude }}
+                <strong>{{ form1.location_latitude.errors }} </strong>
+                </div>
+                <div class="form1" style="padding-left: 120px">
+                <label for="location_longitude" class="control-label" style="padding-right: 52px">{{ form1.location_longitude.label_tag }}</label>
+                <br> {{ form1.location_longitude }}
+                <strong>{{ form1.location_longitude.errors }} </strong>
+                </div>
+                <div class="form1" style="padding-left: 120px">
+                <label for="location_longitude" >{{ form1.img.label_tag }}</label>
+                <br> {{ form1.img }}
+                <strong>{{ form1.img.errors }} </strong>
+                </div>
+                <p><input type="submit" class="btn btn-danger btnpo2" style="margin-left: 120px" name="submit" value="Create"/></p>
+        </form>
+    </div>
     <!-- Footer -->
     <footer>
         <div class="container text-center">

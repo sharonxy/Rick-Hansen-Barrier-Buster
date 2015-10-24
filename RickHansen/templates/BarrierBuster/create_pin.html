@@ -96,18 +96,18 @@
                 </div>
                 <div class="form1" style="padding-left: 120px">
                 <label for="description" style="padding-right: 52px">{{ form1.description.label_tag }}</label>
-                <br> {{ form1.description }}
+                <br> <div style="color: black">{{form1.description }}</div>
                 <strong>{{ form1.description.errors }} </strong>
                 </div>
                 <p> Please mark the location on the map: (latitude and longitude fields will be automatically filled)</P>
                 <div class="form1" style="padding-left: 120px">
                 <label for="location_latitude" class="control-label" style="padding-right: 52px">{{ form1.location_latitude.label_tag }}</label>
-                <br> {{ form1.location_latitude }}
+                <br> <div style="color: black">{{ form1.location_latitude }}</div>
                 <strong>{{ form1.location_latitude.errors }} </strong>
                 </div>
                 <div class="form1" style="padding-left: 120px">
                 <label for="location_longitude" class="control-label" style="padding-right: 52px">{{ form1.location_longitude.label_tag }}</label>
-                <br> {{ form1.location_longitude }}
+                <br> <div style="color: black">{{ form1.location_longitude }}</div>
                 <strong>{{ form1.location_longitude.errors }} </strong>
                 </div>
                 <div class="form1" style="padding-left: 120px">
@@ -138,7 +138,9 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="/static/js/grayscale.js"></script>
+    <script src="/static/js/grayscale.create.pin.js"></script>
+
+    <div id="map_canvas" style="width:50%; height:50%"></div>
 
 </body>
 

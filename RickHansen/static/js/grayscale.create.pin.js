@@ -169,6 +169,26 @@ function init() {
 
     // drop the pins down (markers)
     setMarkers(map);
+    
+    var marker = new google.maps.Marker({
+        draggable: true,
+        position: {
+            lat: 49.2827,
+            lng: -123.1207
+        }, 
+        map: map,
+        title: "Your location"
+    });
+
+    // dragable pin
+    google.maps.event.addListener(marker, 'dragend', function (event) {
+        document.getElementById("id_location_latitude").value = this.getPosition().lat();
+        document.getElementById("id_location_longitude").value = this.getPosition().lng();
+        document.getElementById("id_location_latitude").innerText = document.getElementById("id_location_latitude").value;
+        document.getElementById("id_location_longitude").innerText = document.getElementById("id_location_longitude").value;
+        console.log(document.getElementById("id_location_latitude").value);
+        console.log(document.getElementById("id_location_longitude").value);
+    });
 
 };
 
@@ -209,14 +229,3 @@ function setMarkers(map) {
         });
     }
 };
-
-
-
-
-
-
-
-
-
-
-

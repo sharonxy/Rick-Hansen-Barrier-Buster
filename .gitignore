@@ -4,3 +4,5 @@
 # useless folder formatting files #
 .DS_Store
 
+# other useless things #
+*.SQLite3

@@ -1,0 +1,29 @@
+[
+  {
+    "model": "Comment.pin",
+    "pk": 1,
+    "fields": {
+      "pin": 1,
+      "comment": "Should we tell the City of Vancouver to resolve this issue?",
+      "date": "2015-03-16T18:12:00+00:00"
+    }
+  },
+  {
+    "model": "Comment.pin",
+    "pk": 2,
+    "fields": {
+      "pin": 1,
+      "comment": "Mayor Robertson is aware of the issue.",
+      "date": "2015-03-18T01:16:33+00:00"
+    }
+  },
+  {
+    "model": "Comment.pin",
+    "pk": 3,
+    "fields": {
+      "pin": 3,
+      "comment": "This can't be, the elevator hasn't been made yet!",
+      "date": "2018-11-01T09:54:00+00:00"
+    }
+  }
+]

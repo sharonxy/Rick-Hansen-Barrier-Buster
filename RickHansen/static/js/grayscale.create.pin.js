@@ -184,8 +184,6 @@ function init() {
     google.maps.event.addListener(marker, 'dragend', function (event) {
         document.getElementById("id_location_latitude").value = this.getPosition().lat();
         document.getElementById("id_location_longitude").value = this.getPosition().lng();
-        document.getElementById("id_location_latitude").innerText = document.getElementById("id_location_latitude").value;
-        document.getElementById("id_location_longitude").innerText = document.getElementById("id_location_longitude").value;
         console.log(document.getElementById("id_location_latitude").value);
         console.log(document.getElementById("id_location_longitude").value);
     });

@@ -10,7 +10,6 @@ class Pin(models.Model):
 		('Traffic Light Timing', 'Traffic Light Timing'), ('Traffic Light Low Sound', 'Traffic Light Low Sound'),
 		('Accessible Parking', 'Accessible Parking'), ('Establishment Policy', 'Establishment Policy'), ('Other', 'Other'))
 	Status_Choice = (('Barrier','Barrier'),('In Progress','In Progress'),('Resolved', 'Resolved'),('Best Practice','Best Practice'))
-	Status_Choice = (('Barrier','Barrier'),('In Progress','In Progress'),('Resolved', 'Resolved'),('Best Practice','Best Practice'))
 	#General information about Pin
 	tag = models.CharField(max_length=50, choices=Tag_Choice, blank=False, default='Accessible Path')
 	status = models.CharField(max_length=20, choices=Status_Choice, blank=False, default='Barrier')

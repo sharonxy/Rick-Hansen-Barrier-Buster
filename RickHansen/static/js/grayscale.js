@@ -189,13 +189,6 @@ console.log(pins);
 // places the markers according to coords (var pins)
 function setMarkers(map) {
 
-    var image = {
-        url: '/static/img/map-marker.png',
-        // size: new google.maps.Size(20, 32),
-        // origin: new google.maps.Point(0, 0),
-        // anchor: new google.maps.Point(0, 32)
-    };
-
     // defines the clickable region of the icon
     // no real use yet
     // var shape = {
@@ -206,6 +199,26 @@ function setMarkers(map) {
     for (var i=0; i<pins.length; i++) {
         // object (one pin)
         var pin = pins[i];
+
+        var status = pin.fields.status;
+
+        if (status === 'Barrier')
+            var url = '/static/img/map-marker-barrier.png';
+        else if (status === 'In Progress')
+            var url = '/static/img/map-marker-in-progress.png';
+        else if (status === 'Resolved')
+            var url = '/static/img/map-marker-resolved.png';
+        else if (status === 'Best Practice')
+            var url = '/static/img/map-marker-best-practice.png';
+        else
+            var url = '/static/img/map-marker.png';
+
+        var image = {
+            url: url
+            // size: new google.maps.Size(20, 32),
+            // origin: new google.maps.Point(0, 0),
+            // anchor: new google.maps.Point(0, 32)
+        };
 
         if (pin.fields.address != null)
             var address = pin.fields.address;
@@ -223,7 +236,7 @@ function setMarkers(map) {
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">' + pin.fields.tag + '</h1>'+
             '<div id="bodyContent">'+
-            '<div><b>Status: </b>'+ pin.fields.status +'</div>'+
+            '<div><b>Status: </b>'+ status +'</div>'+
             '<div><b>Description: </b>'+ pin.fields.description +'</div>'+
             '<div><b>Address: </b>'+ address +'</div>'+
             '<div><b>Date created: </b>'+ pin.fields.date_created.slice(0,10) + " " + pin.fields.date_created.slice(11,19) +'</div>'+

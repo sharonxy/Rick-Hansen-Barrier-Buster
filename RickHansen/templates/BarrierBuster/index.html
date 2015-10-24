@@ -60,10 +60,7 @@
                         <a class="page-scroll" href="#about">About Us</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#tags">Tags</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#mapContainer">Map</a>
+                        <a class="page-scroll" href="#tags">Map</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact -100px">Contact</a>
@@ -119,15 +116,13 @@
 
     <section id="mapContainer">
         <!-- Buttons -->
-        <span id="addButton" class="btn-lg glyphicon glyphicon-plus"></span>
-        <span id="searchButton" class="btn-lg glyphicon glyphicon-search"></span>
         <img class = "redIcon" src="static/img/Condition_red_barrier_Icon.png" onclick=f></img>
         <img class = "orangeIcon" src="static/img/Condition_Orange_IP_Icon.png"></img>
         <img class = "greenIcon" src="static/img/Condition_Green_Resolved_Icon.png"></img>
         <img class = "blueIcon" src="static/img/Condition_Blue_BP_Icon.png"></img>
 
         <a href="{% url 'BarrierBuster:createPin' %}" class="page-scroll"><span id="addButton" class="btn-lg glyphicon glyphicon-plus"></span>Add a pin</a>
-        <a href="#searchMenu" class="page-scroll"><span id="searchButton" class="btn-lg glyphicon glyphicon-search"></span></a>
+        <a href="{% url 'BarrierBuster:searchPin' %}" class="page-scroll"><span id="searchButton" class="btn-lg glyphicon glyphicon-search"></span>Search Pins</a>
 
         <!-- Map -->
         <div id="map"></div>

@@ -23,6 +23,9 @@
     <link href="http://fonts.googleapiFhs.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
+    <!-- Pin Data -->
+    <input type="hidden" id="allPins" value="{{allPins}}" />
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -54,7 +57,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">About Us</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#tags">Tags</a>
@@ -63,7 +66,7 @@
                         <a class="page-scroll" href="#mapContainer">Map</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact -100px">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -95,7 +98,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <p class = "aboutUs">ABOUT US</p>
                 <p class = "aboutUsDetails">OUR MISSION</p>
-                <p class ="aboutUsParagraph">Paragraph</p>
+                <p class ="aboutUsParagraph">To inspire leaders, influencers and the public to join Rick Hansen in creating a global movement to remove barriers and liberate the amazing potential of people with disabilities.</p>
                 <p></p>
             </div>
         </div>
@@ -116,7 +119,14 @@
 
     <section id="mapContainer">
         <!-- Buttons -->
-        <a href="#addMenu" class="page-scroll"><span id="addButton" class="btn-lg glyphicon glyphicon-plus"></span></a>
+        <span id="addButton" class="btn-lg glyphicon glyphicon-plus"></span>
+        <span id="searchButton" class="btn-lg glyphicon glyphicon-search"></span>
+        <img class = "redIcon" src="static/img/Condition_red_barrier_Icon.png" onclick=f></img>
+        <img class = "orangeIcon" src="static/img/Condition_Orange_IP_Icon.png"></img>
+        <img class = "greenIcon" src="static/img/Condition_Green_Resolved_Icon.png"></img>
+        <img class = "blueIcon" src="static/img/Condition_Blue_BP_Icon.png"></img>
+
+        <a href="{% url 'BarrierBuster:createPin' %}" class="page-scroll"><span id="addButton" class="btn-lg glyphicon glyphicon-plus"></span>Add a pin</a>
         <a href="#searchMenu" class="page-scroll"><span id="searchButton" class="btn-lg glyphicon glyphicon-search"></span></a>
 
         <!-- Map -->

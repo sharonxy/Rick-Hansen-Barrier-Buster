@@ -196,6 +196,42 @@ a:focus {
     }
 }
 
+.btn-lg .glyphicon .glyphicon-plus {
+    border: 3px;
+}
+
+.blueIcon {
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin-right: 30px;
+}
+
+.blueIcon:hover {
+
+}
+
+.redIcon {
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin-right: 30px;   
+}
+
+.greenIcon {
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin-right: 30px;
+}
+
+.orangeIcon {
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin-right: 30px;
+}
+
 .btn-circle {
     width: 70px;
     height: 70px;
@@ -403,6 +439,7 @@ body {
 
 .aboutUsParagraph {
     color: #6D6E71;
+    font-size: 22px;
 }
 
 .barrierBusterTagsHeader {
@@ -418,7 +455,7 @@ body {
 }
 
 .tags-section {
-    background-color: black;
+    background-color: #414042;
 }
 
 .tags-section-outer {
@@ -436,9 +473,38 @@ body {
 }
 
 .about-us {
-    padding-top: 40px;
-    padding-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 70px;
     margin-left:0px;
     margin-right: 0px;
     width: inherit;
+}
+
+.pinBody {
+    background-color: #414042;
+    font-family: Arial;
+}
+
+.pinHead {
+    font-family: Arial;
+    font-weight: lighter !important;
+}
+
+.pinHead .formArea {
+    font-weight: lighter !important;
+}
+
+#id_description {
+    width: 80%;
+    color: #414042;
+}
+
+#id_tag {
+    width: 80%;
+    color: #414042;
+}
+
+.formArea .form1 .control-label {
+    font-weight: normal !important;
+    font-family: Arial;
 }

@@ -23,10 +23,6 @@ class Comment(models.Model):
 	pin = models.ForeignKey(Pin)
 	comment = models.CharField(max_length=500, blank=False)
 	date = models.DateField(blank=False)
-<<<<<<< HEAD
-
-=======
->>>>>>> 19365fd723d51824ebcc4171d2f0974de4fe710f
 
 class PinForm(ModelForm):
 	class Meta:
@@ -52,7 +48,3 @@ class CommentForm(ModelForm):
 		widgets = {
         	'comment': widgets.Textarea(attrs={'placeholder': 'Add your comment here'}),
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 19365fd723d51824ebcc4171d2f0974de4fe710f

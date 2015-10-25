@@ -22,6 +22,9 @@
     <link href="http://fonts.googleapiFhs.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
+    <!-- Pin Data -->
+    <input type="hidden" id="allPins" value="{{allPins}}" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -41,7 +44,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="{% url 'BarrierBuster:index' %}">
-                    <i class="fa fa-play-circle"></i>  <span class="light"></span>Barrier Buster Map
+                    <span class="light"></span><img class = "rHlogo" src="/static/img/RickHansen_Logo.png"></img>
                 </a>
             </div>
 
@@ -57,6 +60,12 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="{% url 'BarrierBuster:index' %}#map">Map</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'BarrierBuster:createPin' %}">Add Barrier</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'BarrierBuster:searchPin' %}">Search Barriers</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="{% url 'BarrierBuster:index' %}#contact">Contact</a>
@@ -128,20 +137,6 @@
         {% endif %}
     </div>
 
-    <div id="pinlist">
-        {% if pin %}
-        <h2 class="bg-info"> Pin {{pin.id}} Detail:</h2>
-         <li>Tag: {{pin.tag}}</ls>
-         <li>Status: {{pin.status}}</li>
-         <li>Description: {{pin.description}}</li>
-         <li>Address: {{pin.address}}</li>
-         <li>Latitude: {{pin.location_latitude}}</li>
-         <li>Longitude: {{pin.location_longitude}}</li>
-            {% if pin.img %}         
-            <li> Image: <img src='{{image_path}}'> </li>
-            {% endif %}
-        {% endif %}
-    </div>
     <!-- Footer -->
     <footer>
         <div class="container text-center">

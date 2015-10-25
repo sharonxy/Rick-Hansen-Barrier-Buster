@@ -220,10 +220,6 @@ a:focus {
     margin-right: 30px;
 }
 
-.blueIcon:hover {
-
-}
-
 .redIcon {
     width: 25px;
     height: 25px;
@@ -476,6 +472,11 @@ body {
     color: white;
     font-family: 'Colors of Autumn';
     font-size:38.6px;
+}
+
+.tagParagraph{
+    color: white;
+    font-size: 18px;
 }
 
 .tags-section {

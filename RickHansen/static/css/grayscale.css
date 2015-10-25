@@ -181,6 +181,7 @@ a:focus {
     font-family: 'Arial';
     font-style: normal !important;
     text-align: bottom;
+    margin-bottom: 0px;
 }
 
 .intro .intro-body .intro-text {

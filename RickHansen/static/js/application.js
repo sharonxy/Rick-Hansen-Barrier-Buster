@@ -4,22 +4,52 @@ $(function(){
 	var $searchMenu = $("#searchMenu");
 	var $addButton = $("#addButton");
 	var $searchButton = $("#searchButton");
-	var $intro = $(".intro");
+	var $intro = $("#introHead");
 	var counter = 0;
+	// $.fn.preload = function() {
+ //    this.each(function(){
+ //        // $('static/img/')[0].src = this;
+ //    });
+// }
+	// $(['rh_bgimage_hike.png','rh_bgimage_KidandFather.png','rh_bgimage_Beach.png']).preload();
 
 	var changeBackGround = function(){
-			if(counter % 4 === 0){
-			$intro.css('background', 'url(static/img/rh_bgimage_hike.png) no-repeat center center scroll');
-			$intro.css('background-size', 'cover');
+		// var oDeferred = jQuery.promise();
+
+
+		if(counter % 4 === 0){
+			$intro.addClass("intro1");
+			$intro.removeClass("intro2");
+			$intro.removeClass("intro3");
+			$intro.removeClass("intro");
+			// $intro.css('background', 'url(static/img/rh_bgimage_hike.png) no-repeat center center scroll');
+			// $intro.css('background-size', 'cover');
 		} else if (counter % 4 === 1){
-			$intro.css('background', 'url(static/img/rh_bgimage_KidandFather.png) no-repeat center center scroll');
-			$intro.css('background-size', 'cover');
+						$intro.addClass("intro2");
+						$intro.removeClass("intro1");
+			$intro.removeClass("intro3");
+			$intro.removeClass("intro");
+
+			
+			
+			// $intro.css('background', 'url(static/img/rh_bgimage_KidandFather.png) no-repeat center center scroll');
+			// $intro.css('background-size', 'cover');
 		} else if (counter % 4 === 2){
-			$intro.css('background', 'url(static/img/rh_bgimage_Beach.png) no-repeat center center scroll');
-			$intro.css('background-size', 'cover');
+						$intro.addClass("intro3");
+						$intro.removeClass("intro2");
+			$intro.removeClass("intro");
+			$intro.removeClass("intro1");
+
+			// $intro.css('background', 'url(static/img/rh_bgimage_Beach.png) no-repeat center center scroll');
+			// $intro.css('background-size', 'cover');
 		} else if (counter % 4 === 3){
-			$intro.css('background', 'url(static/img/rh_bgimage_Run.png) no-repeat center center scroll');
-			$intro.css('background-size', 'cover');
+						$intro.addClass("intro");
+						$intro.removeClass("intro1");
+			$intro.removeClass("intro3");
+			$intro.removeClass("intro2");
+
+			// $intro.css('background', 'url(static/img/rh_bgimage_Run.png) no-repeat center center scroll');
+			// $intro.css('background-size', 'cover');
 		}
 		counter++;
 

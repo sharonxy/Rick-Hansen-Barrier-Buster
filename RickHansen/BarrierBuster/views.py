@@ -56,7 +56,7 @@ def pinDetail(request, pin_id):
 	pin = get_object_or_404(Pin, pk=pin_id)
 	data = serializers.serialize('json', Pin.objects.filter(pk=pin_id))
 	if pin.img:
-		return render(request, 'BarrierBuster/search_pin.html', {'allPins': data, 'pin': pin, 'image_path': settings.STATIC_URL + pin.img.url[7:]})
+		return render(request, 'BarrierBuster/pin_detail.html', {'allPins': data, 'pin': pin, 'image_path': settings.STATIC_URL + pin.img.url[7:]})
 	else:
-		return render(request, 'BarrierBuster/search_pin.html', {'allPins': data, 'pin': pin})
+		return render(request, 'BarrierBuster/pin_detail.html', {'allPins': data, 'pin': pin})
 

@@ -90,7 +90,9 @@
         <li>Address: {{pin.address}}</li>
         <li>Latitude: {{pin.location_latitude}}</li>
         <li>Longitude: {{pin.location_longitude}}</li>
-        <li>Image: {{pin.img}}</li>
+        {% if pin.img %}
+        <li>Image: <img src='{{image_path}}'></li>
+        {% endif %}
     </div>
     <!-- Footer -->
     <footer>

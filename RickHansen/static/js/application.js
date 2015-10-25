@@ -13,6 +13,7 @@ $(function(){
 
 		} else if (counter % 3 === 1){
 			$intro.css('background', 'url(static/img/rh_bgimage_hike.png) no-repeat center center scroll');
+			$intro.css('background-size', 'cover');
 		} else {
 
 		}

@@ -13,7 +13,7 @@
     "pk": 2,
     "fields": {
       "pin": 1,
-      "comment": "Mayor Robertson is aware of the issue and is onboard about a fix",
+      "comment": "Mayor Robertson has contacted facilities for a fix.",
       "date": "2015-03-18T01:16:33+00:00"
     }
   },
@@ -40,7 +40,7 @@
     "pk": 5,
     "fields": {
       "pin": 5,
-      "comment": "UBC Facilities here. We are aware of the issue and are working on a fix.",
+      "comment": "UBC Facilities is aware of the issue and are working to resolve the issue",
       "date": "2015-03-17T17:28:17+00:00"
     }
   },

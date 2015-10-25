@@ -7,6 +7,7 @@ from datetime import datetime
 from django.contrib import messages
 from django.core import serializers
 from django.views.decorators.csrf import csrf_protect
+from django.conf import settings
 
 def index(request):
 	data = serializers.serialize('json', Pin.objects.all())
@@ -57,4 +58,7 @@ def searchPin(request):
 
 def pinDetail(request, pin_id):
 	pin = get_object_or_404(Pin, pk=pin_id)
-	return render(request, 'BarrierBuster/search_pin.html', {'pin': pin})
+	if pin.img:
+		return render(request, 'BarrierBuster/search_pin.html', {'pin': pin, 'image_path': settings.STATIC_URL + pin.img.url[7:]})
+	else:
+		return render(request, 'BarrierBuster/search_pin.html', {'pin': pin})

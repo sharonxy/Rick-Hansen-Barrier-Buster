@@ -79,26 +79,26 @@
     <h2>Search Pins</h2>
     <p>Search Barriers and Best Practices by Type and Location</p>
     </div>
+    
     <div id="form">
         <form   id="searchform" role="form" method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
               <div class="form" style="padding-left: 120px">
                 <label for="tag" class="control-label" style="padding-right: 52px">{{ searchForm.tag.label_tag }}
-                    <span style="font-size: 20px;color: red">*</span></label>
+                    </label>
                 <br> {{ searchForm.tag }}
                 <strong>{{ searchForm.tag.errors }} </strong>
                 </div>
                 <div class="form" style="padding-left: 120px">
                 <label for="status" class="control-label" style="padding-right: 52px">{{ searchForm.status.label_tag }}
-                    <span style="font-size: 20px;color: red">*</span></label>
+                    </label>
                 <br> {{ searchForm.status }}
                 <strong>{{ searchForm.status.errors }} </strong>
                 </div>
-               
-                <p><input type="submit" class="btn btn-danger btnpo2" style="margin-left: 120px" name="submit" value="Search"/></p>
+               <p><input type="submit" class="btn btn-danger btnpo2" style="margin-left: 120px" name="submit" value="Search"/></p>
         </form>
     </div>
-
+    
     <div id="pinlist" class="container col-md-8">
         {% if pin_list %}
         <div class="text-center">
@@ -107,6 +107,7 @@
         <table class="table"  >
             <thead>
             <tr>
+                    <th>PinID</th>
                     <th>Tag</th>
                     <th>Status</th>
                     <th>Address</th>
@@ -123,8 +124,7 @@
                     <td>{{pin.location_longitude}}</td>
                 </tr>  
            {% endfor %}        
-        </table>
-        
+        </table>       
         {% endif %}
     </div>
 
@@ -137,7 +137,9 @@
          <li>Address: {{pin.address}}</li>
          <li>Latitude: {{pin.location_latitude}}</li>
          <li>Longitude: {{pin.location_longitude}}</li>
-         <li>Image: {{pin.img}}</li>
+            {% if pin.img %}         
+            <li> Image: <img src='{{image_path}}'> </li>
+            {% endif %}
         {% endif %}
     </div>
     <!-- Footer -->

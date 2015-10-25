@@ -37,8 +37,10 @@ function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
 
+    var initialLocation = null;
+
     // Try W3C Geolocation (Preferred)
-    if(navigator.geolocation) {
+    if(navigator.geolocation && initialLocation == null) {
         browserSupportFlag = true;
         navigator.geolocation.getCurrentPosition(function(position) {
             initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);

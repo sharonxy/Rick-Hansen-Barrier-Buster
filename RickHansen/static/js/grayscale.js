@@ -241,6 +241,7 @@ function setMarkers(map) {
             '<div><b>Address: </b>'+ address +'</div>'+
             '<div><b>Date created: </b>'+ pin.fields.date_created.slice(0,10) + " " + pin.fields.date_created.slice(11,19) +'</div>'+
             '<div><b>Date updated: </b>'+ date.slice(0,10) + " " + date.slice(11,19) +'</div>'+
+            '<div><a href="pins/' + (i+1) + '">See more</a>' +
             '</div>'+
             '</div>';
 

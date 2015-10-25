@@ -63,6 +63,12 @@
                         <a class="page-scroll" href="#tags">Map</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="{% url 'BarrierBuster:createPin' %}">Add&nbspa&nbspPin</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'BarrierBuster:searchPin' %}">Search&nbspPins</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -115,7 +121,7 @@
 
     <section id="mapContainer">
         <!-- Buttons -->
-        <a href= "{% url 'BarrierBuster:searchPin' %"><img class = "redIcon" src="static/img/Condition_red_barrier_Icon.png"></img>
+        <a href= "{% url 'BarrierBuster:searchPin' %}"><img class = "redIcon" src="static/img/Condition_red_barrier_Icon.png"></img>
         <a href= "{% url 'BarrierBuster:searchPin' %}"><img class = "orangeIcon" src="static/img/Condition_Orange_IP_Icon.png"></img>
         <a href= "{% url 'BarrierBuster:searchPin' %}"><img class = "greenIcon" src="static/img/Condition_Green_Resolved_Icon.png"></img>
         <a href= "{% url 'BarrierBuster:searchPin' %}"><img class = "blueIcon" src="static/img/Condition_Blue_BP_Icon.png"></img>

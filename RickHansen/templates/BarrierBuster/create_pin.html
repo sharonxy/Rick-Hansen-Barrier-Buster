@@ -78,7 +78,11 @@
     <!-- Map Section -->
     <div id="map"></div>
     <!-- Form Section -->   
-    <div id="form">
+    <div id="form" style="padding-top : 50px">
+        <div class="container text-center">
+        <h2>Add a Pin to the Map</h2>
+        <p>Drag the marker to a location on the map. Latitude and longitude fields will be automatically filled</p>
+        </div>
         <form   id="pinform" class="formArea" role="form" method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
               <div class="form1" style="padding-left: 120px">
@@ -98,7 +102,6 @@
                 <br> <div style="color: black">{{form1.description }}</div>
                 <strong>{{ form1.description.errors }} </strong>
                 </div>
-                <p> Please mark the location on the map: (latitude and longitude fields will be automatically filled)</P>
                 <div class="form1" style="padding-left: 120px">
                 <label for="address" class="control-label" style="padding-right: 52px">{{ form1.address.label_tag }}</label>
                 <br> <div style="color: black">{{ form1.address }}</div>
@@ -125,7 +128,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Rick Hansen Foundation 2015</p>
+            <p>Copyright &copy; 2015 Rick Hansen Foundation</p>
         </div>
     </footer>
 

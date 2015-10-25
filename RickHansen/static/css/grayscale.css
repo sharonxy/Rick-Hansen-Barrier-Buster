@@ -529,6 +529,11 @@ body {
     color: #414042;
 }
 
+#id_status {
+    width: 80%;
+    color: #414042;
+}
+
 .formArea .form1 .control-label {
     font-weight: normal !important;
     font-family: Arial;

@@ -14,7 +14,7 @@ $(function(){
 		} else if (counter % 4 === 1){
 			$intro.css('background', 'url(static/img/rh_bgimage_KidandFather.png) no-repeat center center scroll');
 			$intro.css('background-size', 'cover');
-		} else if (counter % 4 === 2{
+		} else if (counter % 4 === 2){
 			$intro.css('background', 'url(static/img/rh_bgimage_Beach.png) no-repeat center center scroll');
 			$intro.css('background-size', 'cover');
 		} else if (counter % 4 === 3){

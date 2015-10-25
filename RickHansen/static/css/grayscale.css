@@ -533,3 +533,8 @@ body {
     font-weight: normal !important;
     font-family: Arial;
 }
+
+.contact-section {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}

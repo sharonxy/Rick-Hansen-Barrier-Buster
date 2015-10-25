@@ -127,10 +127,6 @@ a:focus {
     color: #fff;
 }
 
-.navbar-nav {
-  text-align: right;
-}
-
 @media(min-width:768px) {
     .navbar-custom {
         padding: 20px 0;
@@ -163,6 +159,9 @@ a:focus {
     text-align: center;
     color: #fff;
     background: url(../img/rh_bgimage_hike.png) no-repeat top center scroll;
+/*    background: url(../img/rh_bgimage_KidandFather.png) no-repeat center center scroll;
+    background: url(../img/rh_bgimage_Beach.png) no-repeat center center scroll;
+    background:url(../img/rh_bgimage_Run.png) no-repeat center center scroll;*/
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -170,6 +169,59 @@ a:focus {
     -o-background-size: cover;
 }
 
+.intro1 {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    /*background: url(../img/rh_bgimage_hike.png) no-repeat top center scroll;*/
+    background: url(../img/rh_bgimage_KidandFather.png) no-repeat center center scroll;
+/*    background: url(../img/rh_bgimage_Beach.png) no-repeat center center scroll;
+    background:url(../img/rh_bgimage_Run.png) no-repeat center center scroll;*/
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.intro2 {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+/*    background: url(../img/rh_bgimage_hike.png) no-repeat top center scroll;
+    background: url(../img/rh_bgimage_KidandFather.png) no-repeat center center scroll;*/
+    background: url(../img/rh_bgimage_Beach.png) no-repeat center center scroll;
+    /*background:url(../img/rh_bgimage_Run.png) no-repeat center center scroll;*/
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.intro3 {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+/*    background: url(../img/rh_bgimage_hike.png) no-repeat top center scroll;
+    background: url(../img/rh_bgimage_KidandFather.png) no-repeat center center scroll;
+    background: url(../img/rh_bgimage_Beach.png) no-repeat center center scroll;*/
+    background:url(../img/rh_bgimage_Run.png) no-repeat center center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
 .intro .intro-body {
     display: table-cell;
     vertical-align: middle;
@@ -338,7 +390,7 @@ a:focus {
 
 #map {
     width: 100%;
-    height: 400px;
+    height: 200px;
     margin-top: 100px;
 }
 
@@ -530,11 +582,6 @@ body {
 }
 
 #id_tag {
-    width: 80%;
-    color: #414042;
-}
-
-#id_status {
     width: 80%;
     color: #414042;
 }

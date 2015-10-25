@@ -22,6 +22,9 @@
     <link href="http://fonts.googleapiFhs.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
+    <!-- Pin Data -->
+    <input type="hidden" id="allPins" value="{{allPins}}" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -41,7 +44,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="{% url 'BarrierBuster:index' %}">
-                    <i class="fa fa-play-circle"></i>  <span class="light"></span>Barrier Buster Map
+                    <span class="light"></span><img class = "rHlogo" src="/static/img/RickHansen_Logo.png"></img>
                 </a>
             </div>
 
@@ -115,6 +118,7 @@
             </thead>
             {% for pin in pin_list %}
                 <tr class="active" style="color: black">
+                    <td><a href="{% url 'BarrierBuster:pindetail' pin.id %}">{{pin.id}}</a></td>
                     <td>{{pin.tag}}</td>
                     <td>{{pin.status}}</td>
                     <td>{{pin.address}}</td>
@@ -124,6 +128,19 @@
            {% endfor %}        
         </table>
         
+        {% endif %}
+    </div>
+
+    <div id="pinlist">
+        {% if pin %}
+        <h2 class="bg-info"> Pin {{pin.id}} Detail:</h2>
+         <li>Tag: {{pin.tag}}</ls>
+         <li>Status: {{pin.status}}</li>
+         <li>Description: {{pin.description}}</li>
+         <li>Address: {{pin.address}}</li>
+         <li>Latitude: {{pin.location_latitude}}</li>
+         <li>Longitude: {{pin.location_longitude}}</li>
+         <li>Image: {{pin.img}}</li>
         {% endif %}
     </div>
     <!-- Footer -->

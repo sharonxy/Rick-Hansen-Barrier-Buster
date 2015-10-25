@@ -53,5 +53,6 @@ def searchPin(request):
 
 def pinDetail(request, pin_id):
 	pin = get_object_or_404(Pin, pk=pin_id)
-	return render(request, 'BarrierBuster/search_pin.html', {'pin': pin})
+	data = serializers.serialize('json', Pin.objects.filter(pk=pin_id))
+	return render(request, 'BarrierBuster/pin_detail.html', {'allPins': data, 'pin': pin})
 

@@ -33,43 +33,19 @@ $('.navbar-collapse ul li a').click(function() {
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
 
+// Thanks Alex
+var pins = JSON.parse(allPins.value);
+console.log(pins);
+
 function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-
-    var initialLocation = null;
-
-    // Try W3C Geolocation (Preferred)
-    if(navigator.geolocation && initialLocation == null) {
-        browserSupportFlag = true;
-        navigator.geolocation.getCurrentPosition(function(position) {
-            initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-            map.setCenter(initialLocation);
-        }, function() {
-            handleNoGeolocation(browserSupportFlag);
-        });
-    } else { // Browser doesn't support Geolocation
-        browserSupportFlag = false;
-        handleNoGeolocation(browserSupportFlag);
-    }
-    function handleNoGeolocation(errorFlag) {
-        if (errorFlag == true) {
-            alert("Geolocation service failed.");
-            initialLocation = new google.maps.LatLng(49.2827, -123.1207);
-        } else {
-            alert("Your browser doesn't support geolocation. We've placed you in Vancouver Downtown.");
-            initialLocation = new google.maps.LatLng(49.2827, -123.1207);
-        }
-        map.setCenter(initialLocation);
-    }
-
-
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
         zoom: 15,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(49.2827, -123.1207), // Vancouver. Default is New York @ 40.6700, -73.9400
+        center: new google.maps.LatLng(pins[0].fields.location_latitude, pins[0].fields.location_longitude), // Vancouver. Default is New York @ 40.6700, -73.9400
 
         // Disables the default Google Maps UI components
         disableDefaultUI: false,
@@ -209,11 +185,6 @@ function init() {
     setMarkers(map);
 };
 
-
-// Thanks Alex
-var pins = JSON.parse(allPins.value);
-console.log(pins);
-
 // places the markers according to coords (var pins)
 function setMarkers(map) {
 
@@ -248,36 +219,6 @@ function setMarkers(map) {
             // anchor: new google.maps.Point(0, 32)
         };
 
-        if (pin.fields.address != null)
-            var address = pin.fields.address;
-        else
-            var address = '';
-
-        if (pin.fields.date_updated != null)
-            var date = pin.fields.date_updated;
-        else
-            var date = '';
-
-        // data of a detailed window
-        var contentString = '<div id="content" style="color: black">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">' + pin.fields.tag + '</h1>'+
-            '<div id="bodyContent">'+
-            '<div><b>Status: </b>'+ status +'</div>'+
-            '<div><b>Description: </b>'+ pin.fields.description +'</div>'+
-            '<div><b>Address: </b>'+ address +'</div>'+
-            '<div><b>Date created: </b>'+ pin.fields.date_created.slice(0,10) + " " + pin.fields.date_created.slice(11,19) +'</div>'+
-            '<div><b>Date updated: </b>'+ date.slice(0,10) + " " + date.slice(11,19) +'</div>'+
-            '<div><a href="pins/' + (i+1) + '">See more</a>' +
-            '</div>'+
-            '</div>';
-
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 450
-        });
-
         // creating the marker
         var marker = new google.maps.Marker({
             position: {
@@ -286,15 +227,9 @@ function setMarkers(map) {
             },
             map: map,
             icon: image,
-            infowindow: infowindow,
             // shape: shape,
             // title: pin[0],
             zIndex: i // determines which pin is on top if they overlap
-        });
-
-        // listener for clicking on a pin
-        marker.addListener('click', function() {
-            this.infowindow.open(map, this);
         });
     }
 };

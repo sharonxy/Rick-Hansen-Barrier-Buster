@@ -33,9 +33,12 @@ $('.navbar-collapse ul li a').click(function() {
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
 
+var initialLocation = null;
+
 function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
         zoom: 15,
@@ -183,6 +186,32 @@ function init() {
         content: contentString,
         maxWidth: 100
     });
+
+    // Try W3C Geolocation (Preferred)
+    if(navigator.geolocation) {
+        browserSupportFlag = true;
+        navigator.geolocation.getCurrentPosition(function(position) {
+            initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+            map.setCenter(initialLocation);
+            marker.setPosition(initialLocation);
+        }, function() {
+            handleNoGeolocation(browserSupportFlag);
+        });
+    } else { // Browser doesn't support Geolocation
+        browserSupportFlag = false;
+        handleNoGeolocation(browserSupportFlag);
+    }
+    function handleNoGeolocation(errorFlag) {
+        if (errorFlag == true) {
+            alert("Geolocation service failed.");
+            initialLocation = new google.maps.LatLng(49.2827, -123.1207);
+        } else {
+            alert("Your browser doesn't support geolocation. We've placed you in Vancouver Downtown.");
+            initialLocation = new google.maps.LatLng(49.2827, -123.1207);
+        }
+        map.setCenter(initialLocation);
+        marker.setPosition(initialLocation);
+    }
 
     var marker = new google.maps.Marker({
         draggable: true,

@@ -172,7 +172,7 @@ a:focus {
 .intro1 {
     display: table;
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 100px 0;
     text-align: center;
     color: #fff;
@@ -190,7 +190,7 @@ a:focus {
 .intro2 {
     display: table;
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 100px 0;
     text-align: center;
     color: #fff;
@@ -208,7 +208,7 @@ a:focus {
 .intro3 {
     display: table;
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 100px 0;
     text-align: center;
     color: #fff;
@@ -270,6 +270,10 @@ a:focus {
     float: right;
     margin-top: 10px;
     margin-right: 30px;
+}
+
+.blueIcon:hover {
+
 }
 
 .redIcon {
@@ -524,11 +528,6 @@ body {
     color: white;
     font-family: 'Colors of Autumn';
     font-size:38.6px;
-}
-
-.tagParagraph{
-    color: white;
-    font-size: 18px;
 }
 
 .tags-section {

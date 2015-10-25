@@ -54,3 +54,7 @@ def searchPin(request):
 
 	searchForm = SearchForm(initial={'tag': tag1, 'status': status1})
 	return render(request, 'BarrierBuster/search_pin.html', {'searchForm': searchForm})
+
+def pinDetail(request, pin_id):
+	pin = get_object_or_404(Pin, pk=pin_id)
+	return render(request, 'BarrierBuster/search_pin.html', {'pin': pin})

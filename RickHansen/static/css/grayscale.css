@@ -181,6 +181,7 @@ a:focus {
     font-family: 'Arial';
     font-style: normal !important;
     text-align: bottom;
+    margin-bottom: 0px;
 }
 
 .intro .intro-body .intro-text {
@@ -518,7 +519,17 @@ body {
     color: #414042;
 }
 
+#id_status {
+    width: 80%;
+    color: #414042;
+}
+
 #id_tag {
+    width: 80%;
+    color: #414042;
+}
+
+#id_status {
     width: 80%;
     color: #414042;
 }
@@ -526,4 +537,9 @@ body {
 .formArea .form1 .control-label {
     font-weight: normal !important;
     font-family: Arial;
+}
+
+.contact-section {
+    padding-top: 60px;
+    padding-bottom: 50px;
 }

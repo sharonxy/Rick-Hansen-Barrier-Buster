@@ -75,9 +75,9 @@
     <!-- Map Section -->
     <div id="map"></div>
     <!-- Form Section -->   
-    <div class="text-center">
-    <h3>Search Pins</h3>
-    <p><a href="{% url 'BarrierBuster:searchPin' %}">Search Barriers and Best Practices by Type and Location</a></p>
+    <div class="container text-center" style="padding-top: 50px; padding-bottom: 50px">
+    <h2>Search Pins</h2>
+    <p>Search Barriers and Best Practices by Type and Location</p>
     </div>
     <div id="form">
         <form   id="searchform" role="form" method="post" action="" enctype="multipart/form-data">
@@ -99,9 +99,11 @@
         </form>
     </div>
 
-    <div id="pinlist">
+    <div id="pinlist" class="container col-md-8">
         {% if pin_list %}
-        <h2 class="bg-info"> Pin List!</h2>
+        <div class="text-center">
+        <h2> Pin List</h2>
+        </div>
         <table class="table"  >
             <thead>
             <tr>
@@ -141,7 +143,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Your Website 2014</p>
+            <p>Copyright &copy; 2015 Rick Hansen Foundation</p>
         </div>
     </footer>
 

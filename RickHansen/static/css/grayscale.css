@@ -518,6 +518,11 @@ body {
     color: #414042;
 }
 
+#id_status {
+    width: 80%;
+    color: #414042;
+}
+
 #id_tag {
     width: 80%;
     color: #414042;

@@ -298,13 +298,3 @@ function setMarkers(map) {
     }
 };
 
-
-
-
-
-
-
-
-
-
-

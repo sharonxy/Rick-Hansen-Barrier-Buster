@@ -63,6 +63,12 @@
                         <a class="page-scroll" href="#tags">Map</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="{% url 'BarrierBuster:createPin' %}">Add&nbspa&nbspPin</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'BarrierBuster:searchPin' %}">Search&nbspPins</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -95,7 +101,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <p class = "aboutUs">ABOUT US</p>
                 <p class = "aboutUsDetails">OUR MISSION</p>
-                <p class ="aboutUsParagraph">To inspire leaders, influencers and the public to join Rick Hansen in creating a global movement to remove barriers and liberate the amazing potential of people with disabilities.</p>
+                <p class ="aboutUsParagraph">To inspire leaders, influencers and the public to join Rick Hansen in creating a global movement<br> to remove barriers and liberate the amazing potential of people with disabilities.</p>
                 <p></p>
             </div>
         </div>
@@ -108,6 +114,8 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <p class ="barrierBusterTagsHeader">BARRIER BUSTER</p>
                     <p class ="tagsHeader">THE TAGS</p>
+                    <p class ="tagParagraph">Report or search a barrier based on barrier types, such as elevator, <br> sidewalk curb, traffic light timing and many more.</p>
+                <p></p>
                 </div>
             </div>
         </div>
@@ -115,13 +123,13 @@
 
     <section id="mapContainer">
         <!-- Buttons -->
-        <a href= "{% url 'BarrierBuster:searchPin' %"><img class = "redIcon" src="static/img/Condition_red_barrier_Icon.png"></img>
+        <a href= "{% url 'BarrierBuster:searchPin' %}"><img class = "redIcon" src="static/img/Condition_red_barrier_Icon.png"></img>
         <a href= "{% url 'BarrierBuster:searchPin' %}"><img class = "orangeIcon" src="static/img/Condition_Orange_IP_Icon.png"></img>
         <a href= "{% url 'BarrierBuster:searchPin' %}"><img class = "greenIcon" src="static/img/Condition_Green_Resolved_Icon.png"></img>
         <a href= "{% url 'BarrierBuster:searchPin' %}"><img class = "blueIcon" src="static/img/Condition_Blue_BP_Icon.png"></img>
 
-        <a href="{% url 'BarrierBuster:createPin' %}" class="page-scroll"><span id="addButton" class="btn-lg glyphicon glyphicon-plus"></span>Add a pin</a>
-        <a href="{% url 'BarrierBuster:searchPin' %}" class="page-scroll"><span id="searchButton" class="btn-lg glyphicon glyphicon-search"></span>Search Pins</a>
+        <a href="{% url 'BarrierBuster:createPin' %}" class="page-scroll"><span id="addButton" class="btn-lg glyphicon glyphicon-plus"></span>Report A Barrier</a>
+        <a href="{% url 'BarrierBuster:searchPin' %}" class="page-scroll"><span id="searchButton" class="btn-lg glyphicon glyphicon-search"></span>Search Barriers Reported</a>
 
         <!-- Map -->
         <div id="map"></div>
@@ -163,7 +171,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Rick Hansen Foundation</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+                <p>Feel free to email us to provide some feedback on our templates, give us<br>suggestions for new templates and themes, or to just say hello!</p>
                 <p><a href="mailto:info@rickhansen.com">info@rickhansen.com</a>
                 </p>
                 <p><a href="https://www.rickhansen.com/">www.rickhansen.com</a>

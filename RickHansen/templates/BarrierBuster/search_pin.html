@@ -62,6 +62,12 @@
                         <a class="page-scroll" href="{% url 'BarrierBuster:index' %}#map">Map</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="{% url 'BarrierBuster:createPin' %}">Add a Pin</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'BarrierBuster:searchPin' %}">Search Pins</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="{% url 'BarrierBuster:index' %}#contact">Contact</a>
                     </li>
                 </ul>
@@ -131,18 +137,6 @@
         {% endif %}
     </div>
 
-    <div id="pinlist">
-        {% if pin %}
-        <h2 class="bg-info"> Pin {{pin.id}} Detail:</h2>
-         <li>Tag: {{pin.tag}}</ls>
-         <li>Status: {{pin.status}}</li>
-         <li>Description: {{pin.description}}</li>
-         <li>Address: {{pin.address}}</li>
-         <li>Latitude: {{pin.location_latitude}}</li>
-         <li>Longitude: {{pin.location_longitude}}</li>
-         <li>Image: {{pin.img}}</li>
-        {% endif %}
-    </div>
     <!-- Footer -->
     <footer>
         <div class="container text-center">
